@@ -91,7 +91,7 @@
 
 # resource "aws_lb_target_group" "api" {
 #   name        = "${var.app_name}-target-group"
-#   port        = 80
+#   port        = var.app_port
 #   protocol    = "HTTP"
 #   vpc_id      = aws_vpc.default.id
 #   target_type = "ip"
@@ -232,8 +232,8 @@
 
 #   ingress {
 #     protocol        = "tcp"
-#     from_port       = 4000
-#     to_port         = 4000
+#     from_port       = var.app_port
+#     to_port         = var.app_port
 #     security_groups = [aws_security_group.lb.id]
 #   }
 
